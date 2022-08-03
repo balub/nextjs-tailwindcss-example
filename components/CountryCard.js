@@ -1,12 +1,17 @@
 import React from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { useRouter } from "next/router";
 
 function CountryCard({ country }) {
   const { theme, setTheme } = useTheme();
+  const router = useRouter();
 
   return (
-    <div className="w-64 bg-white dark:bg-darkBlue dark:rounded-md dark:shadow-md">
+    <div
+      className="w-64 bg-white dark:bg-darkBlue dark:rounded-md dark:shadow-md"
+      onClick={() => router.push(`/countries/${country.name.trim()}`)}
+    >
       <div className="h-36 relative">
         <Image
           src={country.flags}
