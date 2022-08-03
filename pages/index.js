@@ -1,6 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
+
 import CountryCard from "../components/CountryCard.js";
+import NavBar from "../components/NavBar.js";
 
 import { countries } from "../countries.js";
 
@@ -13,9 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-darkBlue w-screen h-20 sticky top-0 p-6 z-10 shadow-xl">
-        <p className="font-bold text-xl text-white">Where in the world?</p>
-      </div>
+      <NavBar />
 
       <div className="mt-8">
         <div className="flex flex-wrap justify-center gap-12">
