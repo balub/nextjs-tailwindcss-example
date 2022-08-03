@@ -1,9 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 function CountryCard({ country }) {
+  const { theme, setTheme } = useTheme();
+
   return (
-    <div className="w-64 bg-darkBlue rounded-md shadow-md">
+    <div className="w-64 bg-white dark:bg-darkBlue dark:rounded-md dark:shadow-md">
       <div className="h-36 relative">
         <Image
           src={country.flags}
@@ -14,15 +17,17 @@ function CountryCard({ country }) {
         />
       </div>
       <div className="m-4">
-        <p className="font-bold text-white text-xl">{country.name}</p>
+        <p className="font-bold text-veryDarkBlue dark:text-white text-xl">
+          {country.name}
+        </p>
         <div className="mt-3 mb-10">
-          <p className="text-white my-1">
+          <p className="text-veryDarkBlue dark:text-white my-1">
             <span className="font-bold">Population:</span> {country.population}
           </p>
-          <p className="text-white my-1">
+          <p className="text-veryDarkBlue dark:text-white my-1">
             <span className="font-bold">Region:</span> {country.region}
           </p>
-          <p className="text-white my-1">
+          <p className="text-veryDarkBlue dark:text-white my-1">
             <span className="font-bold">Capital:</span> {country.capital}
           </p>
         </div>
