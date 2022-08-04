@@ -4675,4 +4675,8 @@ const countries = [
   },
 ];
 
-export { countries };
+const getCountryDetailsByName = (name) => {
+  return countries.find((country) => country.name === name);
+};
+
+export { countries, getCountryDetailsByName };
